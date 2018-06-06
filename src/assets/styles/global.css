@@ -1,0 +1,29 @@
+.renderjson {
+  text-align: left;
+  background: #303030;
+  width: 80%;
+  font-size: 18px;
+  margin-left: 10%;
+  .object,
+  .array {
+    color: #ffffff;
+    a {
+      color: aquamarine;
+      text-decoration: none;
+    }
+    .syntax {
+      color: #f9f902;
+    }
+    .key {
+      color: aqua;
+    }
+    .number,
+    .keyword,
+    .boolean {
+      color: #8080ff;
+    }
+    .string {
+      color: #00ff00;
+    }
+  }
+}
