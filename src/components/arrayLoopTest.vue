@@ -1,5 +1,8 @@
 <template>
-  <div>{{array.length}}</div>
+  <div>
+    <span>数据总量 {{array.length}}
+    </span>
+  </div>
 </template>
 <script>
 import { formatPermission } from '@/utils/format';

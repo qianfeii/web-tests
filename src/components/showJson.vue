@@ -58,7 +58,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="postcss" scoped>
+.hello {
+  width: 90%;
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  margin-left: 5%;
+}
 h1,
 h2 {
   font-weight: normal;
