@@ -1,3 +1,0 @@
-export const DEFAULTMUTATIONS = 'DEFAULTMUTATIONS';
-export const GETSTATUS = 'GETSTATUS';
-export const GETMOCK = 'GETMOCK';
