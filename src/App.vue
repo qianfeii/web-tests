@@ -34,29 +34,11 @@ export default {
   name: 'App',
   data() {
     return {
-      treeData: [
-        {
-          label: 'JSON页面排版',
-          path: '/showJson'
-        },
-        {
-          label: '数组循环测试',
-          path: '/ArrayLoopTest'
-        },
-        {
-          label: '其他1',
-          dis: '789'
-        },
-        {
-          label: '其他2',
-          dis: '852'
-        },
-        {
-          label: '其他3',
-          dis: '963'
-        }
-      ]
+      treeData: this.$router.options.routes
     }
+  },
+  created() {
+    console.log('rooter - - - ', this.$router.options.routes)
   },
   methods: {
     handleNodeClick(data) {
