@@ -1,0 +1,7 @@
+{
+  "mdncode": {
+    "code1":
+      "\n<canvas id='first'>\n  it will show when this does not support canvas\n</canvas>",
+    "code2": "\ncanvas{\n  border: 1px solid black;\n}"
+  }
+}
