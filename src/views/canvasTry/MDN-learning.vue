@@ -5,14 +5,7 @@
       </h2>
       <el-row class="show-area">
         <el-col :span="12">
-          <div>
-            <pre class="code-area">
-              <code v-html="code1" class="language-markup">
-              </code>
-              <code v-html="code2" class="language-css">
-              </code>
-            </pre>
-          </div>
+          <codearea lang="0,2" content="1,2"></codearea>
         </el-col>
         <el-col :span="12">
           <span class="right-arrow">&rarr;</span>
@@ -37,35 +30,36 @@
         </ol>
       </article>
     </section>
+    <section class="wrapper">
+      <h2>绘制形状</h2>
+      <el-row>
+        <el-col :span="12">
+          <div>
+            <pre class="code-area">
+            </pre >
+          </div>
+        </el-col>
+      </el-row>
+    </section>
   </div>
 </template>
 <script>
-const Prism = window.Prism
-const Codes = require('./code.json').mdncode
+const codearea = () => import('@/components/CodeArea')
 export default {
   name: 'basecanvas',
   data() {
     return {}
   },
-  computed: {
-    code1() {
-      return Prism.highlight(Codes.code1, Prism.languages.markup)
-    },
-    code2() {
-      return Prism.highlight(Codes.code2, Prism.languages.css)
-    }
+  components: {
+    codearea
   },
-  mounted() {
-    this.$nextTick(() => {
-      Prism.highlightAll(false)
-    })
-  }
+  methods: {}
 }
 </script>
 
 <style lang="postcss" scoped>
 .wrapper {
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
   text-align: left;
   h2 {
     font-size: 20px;

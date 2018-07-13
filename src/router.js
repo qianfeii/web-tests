@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const ArrayLoopTest = () => import('@/components/ArrayLoopTest')
-const ShowJson = () => import('@/components/ShowJson')
-const CanvasIndex = () => import('@/components/canvasTry/index')
-const CanvasMDN = () => import('@/components/canvasTry/MDN-learning')
-const CanvasW3C = () => import('@/components/canvasTry/w3c-learning')
+const ArrayLoopTest = () => import('@/views/ArrayLoopTest')
+const ShowJson = () => import('@/views/ShowJson')
+const CanvasIndex = () => import('@/views/canvasTry/index')
+const CanvasMDN = () => import('@/views/canvasTry/MDN-learning')
+const CanvasW3C = () => import('@/views/canvasTry/w3c-learning')
 
 Vue.use(Router)
 
