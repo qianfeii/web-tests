@@ -35,6 +35,7 @@ export default {
   },
   created() {},
   mounted() {
+    console.log('123')
     this.$nextTick(() => {
       Prism.highlightAll(false)
     })
