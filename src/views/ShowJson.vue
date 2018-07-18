@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <span>模板内集成模拟api 以配跨域</span>
+    <span>模板内集成模拟api 已配跨域</span>
     <span>json文件api模拟：api/status:</span>
     <div ref="renderStatus"></div>
     <span>mockjs生成api模拟（随机）：api/mock:</span>
