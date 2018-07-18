@@ -1,7 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>I am Aubrey</h2>
     <span>模板内集成模拟api 以配跨域</span>
     <span>json文件api模拟：api/status:</span>
     <div ref="renderStatus"></div>

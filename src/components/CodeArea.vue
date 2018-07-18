@@ -1,7 +1,7 @@
 <template>
   <div>
     <pre>
-      <code v-for="(lan,index) in lang" :key="index+lan" v-html="formatCode(lan,index)" :class="'language-'+langs[lan]">
+      <code v-for="(lan,index) in lang.split(',')" :key="index+lan" v-html="getCode(lan,index)" :class="'language-'+langs[lan]">
       </code>
     </pre>
   </div>
@@ -20,17 +20,11 @@ export default {
   props: {
     lang: {
       type: String,
-      required: true,
-      validator: val => {
-        return val.split(',')
-      }
+      required: true
     },
     content: {
       type: String,
-      required: true,
-      validator: val => {
-        return val.split(',')
-      }
+      required: true
     }
   },
   created() {},
@@ -43,12 +37,9 @@ export default {
   methods: {
     getLang() {},
     getCode(lang, index) {
-      console.log(this.lang + '--' + this.content, '--', typeof this.lang)
-      console.log(lang, '---', index)
-      let _c = 'code' + this.content[index]
+      let _c = 'code' + this.content.split(',')[index]
       let code = Codes[_c]
-      console.log(_c, '- -', code)
-      return Prism.highlight(code, Prism.languages[lang])
+      return Prism.highlight(code, Prism.languages[Langs[lang]])
     }
   }
 }

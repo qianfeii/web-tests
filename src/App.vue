@@ -2,7 +2,11 @@
   <div id="app">
     <el-container>
       <el-header height="80px" style="background:rgba(153, 50, 204,.6)">
-        <h2>web实践</h2>
+        <h2>web实践
+        </h2>
+        <small>
+          welcome to this web test,i am aubrey
+        </small>
         <div class="icon-area">
           <svg class="icon icon-self" aria-hidden="80px">
             <use xlink:href="#icon-github"></use>
@@ -81,14 +85,19 @@ export default {
   box-shadow: inset -1px 0 #e1e1e1;
 }
 h2 {
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   font-size: 26px;
+}
+small {
+  display: block;
+  margin: 0 auto;
 }
 .icon-area {
   margin: 0 100px 0 0;
   float: right;
   .icon-self {
     font-size: 20px;
+    margin: 0 3px;
   }
   .special {
     margin-bottom: -1.5px;
