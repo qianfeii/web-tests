@@ -5,6 +5,8 @@ const ShowJson = () => import('@/views/ShowJson')
 const CanvasIndex = () => import('@/views/canvasTry/index')
 const CanvasMDN = () => import('@/views/canvasTry/MDN-learning')
 const CanvasW3C = () => import('@/views/canvasTry/w3c-learning')
+const CssIndex = () => import('@/views/cssTry/index')
+const CssOne = () => import('@/views/cssTry/tryOne')
 
 Vue.use(Router)
 
@@ -44,6 +46,22 @@ export default new Router({
           name: 'W3Ccanvse',
           component: CanvasW3C,
           label: 'W3C教程'
+        }
+      ]
+    },
+    {
+      path: '/CssIndex',
+      name: 'CssIndex',
+      component: CssIndex,
+      isFolder: true,
+      label: 'css试验',
+      redirect: '/CssIndex/tryOne',
+      children: [
+        {
+          path: '/CssIndex/tryOne',
+          name: 'tryOne',
+          component: CssOne,
+          label: 'cssOne'
         }
       ]
     }
