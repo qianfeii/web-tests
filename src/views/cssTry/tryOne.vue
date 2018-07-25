@@ -34,7 +34,18 @@
         <span>content</span>
       </div>
       <h3>1 个dom</h3>
-      <div class="mgl10 content-change"></div>
+      <div class="mgl10 content-change">content</div>
+      <h3>梯形</h3>
+      <div class="trapezoid"></div>
+      <h3>使用transform属性3D变换</h3>
+      <div class="trapezoid-change">trapezoid</div>
+      <h3>优化</h3>
+      <div class="trapezoid-better"></div>
+    </section>
+    <section class="sect-body four">
+      <h2>图片阴影</h2>
+      <div class="logo"></div>
+      <div class="logo-google"></div>
     </section>
   </div>
 </template>
@@ -146,13 +157,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
-    height: 60px;
+    width: 200px;
+    height: 80px;
     font-size: 18px;
     font-weight: 600;
     color: #fff;
     &::after {
-      content: 'content';
+      content: '';
+      text-align: center;
       position: absolute;
       top: 0;
       left: 0;
@@ -161,6 +173,135 @@
       transform: skewX(-30deg);
       background: rgb(85, 136, 187);
       z-index: inherit;
+    }
+  }
+  .trapezoid {
+    position: relative;
+    left: 200px;
+    width: 400px;
+    height: 180px;
+    background: rgb(85, 136, 170);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -100px;
+      width: 0;
+      height: 0;
+      border-top: 180px solid transparent;
+      border-bottom: 0 solid transparent;
+      border-right: 100px solid rgb(255, 187, 51);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -240px;
+      width: 0;
+      height: 0;
+      border-top: 180px solid transparent;
+      border-bottom: 0 solid transparent;
+      border-left: 240px solid rgb(255, 187, 51);
+    }
+  }
+  .trapezoid-change {
+    position: relative;
+    left: 200px;
+    width: 400px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(85, 136, 170);
+      transform: perspective(200px) rotateX(30deg);
+      z-index: inherit;
+    }
+  }
+  .trapezoid-better {
+    position: relative;
+    left: 200px;
+    width: 400px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(85, 136, 170);
+      transform: perspective(200px) rotateX(30deg) scaleY(2.25);
+      transform-origin: bottom;
+      z-index: inherit;
+      background: linear-gradient(to right, rgb(85, 136, 170) 50%, rgb(255, 187, 51) 50%);
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      box-shadow: 10px 10px 10px 1px rgba(85, 136, 170, 0.2);
+    }
+  }
+}
+.four {
+  .logo {
+    position: relative;
+    margin: 20px 0 0 0;
+    width: 300px;
+    height: 200px;
+    background: url('./Mercedes-Benz.svg') no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 80%;
+      height: 80%;
+      background: url('./Mercedes-Benz.svg') no-repeat;
+      background-size: 100% 100%;
+      filter: blur(7px);
+    }
+  }
+  .logo-google {
+    position: relative;
+    margin: 20px 0 0 0;
+    width: 300px;
+    height: 200px;
+    background: url('./googleplusicon.svg') no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 80%;
+      height: 80%;
+      background: url('./googleplusicon.svg') no-repeat;
+      background-size: 100% 100%;
+      filter: blur(7px);
     }
   }
 }
